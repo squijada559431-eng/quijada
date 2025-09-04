@@ -1,0 +1,203 @@
+package nana;
+
+import java.util.*;
+public class assignment {
+
+	public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+		
+		System.out.println("\nChoose Data Structure:");
+		System.out.println("1. Stack");
+		System.out.println("2. Queue");
+		System.out.println("3. Linked List");
+		System.out.println("4. Circular Linked List");
+		System.out.println("5. Exit:");
+		System.out.println("Enter a choice: ");
+		int choice = sc.nextInt();
+		
+		switch (choice) {
+			case 1:
+				stackMenu(sc);
+				break;
+			case 2:
+				queueMenu(sc);
+				break;
+			case 3:
+				linkedListMenu(sc);
+				break;
+			case 4:
+				circularLinkedList(sc);
+				break;
+			case 5:
+				System.out.println("Exiting the program...");
+				return;
+			default:
+				System.out.println("Invalid choice. Try again.");
+
+				
+			
+			}
+		}
+
+	private static void stackMenu(Scanner sc) {
+		Stack<Integer> stack = new Stack<>();
+		while(true) {
+			System.out.println("--- Stack Operations ---");
+			System.out.println("1. Push");
+			System.out.println("2. Pop");
+			System.out.println("3. Display");
+			System.out.println("4. Back");
+			System.out.println("Enter value to push: ");
+			int op = sc.nextInt();
+			
+			
+			
+			switch (op) {
+			case 1:
+				System.out.println("Enter value to push: ");
+				int val = sc.nextInt();
+				stack.push(val);
+				System.out.println("Pushed " + val + " into stack.");
+				break;
+			case 2:
+				if (!stack.isEmpty()) {
+					System.out.println("Popped: " + stack.pop());
+				} else {
+					System.out.println("Stack is empty.");
+					
+				}
+				break;
+			case 3:
+				System.out.println("Stack contents: " + stack);
+				break;
+			case 4:
+				return;
+				default:
+					System.out.println("Invalid choice.");
+			
+				}
+			}
+		}
+	
+	
+
+	private static void queueMenu(Scanner sc) {
+		Queue<Integer> queue = new LinkedList<>();
+		while(true) {
+			
+			System.out.println("--- Queue Operations ---");
+			System.out.println("1. Enqueue");
+			System.out.println("2. Dequeue");
+			System.out.println("3. Display");
+			System.out.println("4. Back");
+			System.out.println("Enter choice: ");
+			int op = sc.nextInt();
+			
+			
+			switch (op) {
+			case 1:
+				System.out.println("Enter value to enqueue: ");
+				int val = sc.nextInt();
+				queue.add(val);
+				System.out.println("Enqueued " + val);
+				break;
+			case 2:
+				if (!queue.isEmpty()) {
+					System.out.println("Dequeued: " + queue.poll());
+				} else {
+					System.out.println("Queue is empty.");
+					
+				}
+				break;
+			case 3:
+				System.out.println("Queue contents: " + queue);
+				break;
+			case 4:
+				return;
+				default:
+					System.out.println("Invalid choice.");
+			
+				}
+			}
+		}
+
+	private static void linkedListMenu(Scanner sc) {
+		LinkedList<Integer> list = new LinkedList<>();
+		while(true) {
+			
+			System.out.println("--- Linked Operations ---");
+			System.out.println("1. Insert at end");
+			System.out.println("2. Delete at beginning");
+			System.out.println("3. Display");
+			System.out.println("4. Back");
+			System.out.println("Enter choice: ");
+			int op = sc.nextInt();
+			
+			
+			switch (op) {
+			case 1:
+				System.out.println("Enter value to insert: ");
+				int val = sc.nextInt();
+				list.add(val);
+				System.out.println("Inserted " + val + " at end. ");
+				break;
+			case 2:
+				if (!list.isEmpty()) {
+					System.out.println("Deleted: " + list.removeFirst());
+				} else {
+					System.out.println("List is empty.");
+					
+				}
+				break;
+			case 3:
+				System.out.println("List contents: " + list);
+				break;
+			case 4:
+				return;
+				default:
+					System.out.println("Invalid choice.");
+
+			}
+		}
+	}
+	
+
+	private static void circularLinkedList(Scanner sc) {
+		CircularLinkedList cll = new CircularLinkedList();
+		while(true) {
+			
+			System.out.println("--- Circular Linked List Operations ---");
+			System.out.println("1. Insert");
+			System.out.println("2. Delete");
+			System.out.println("3. Display");
+			System.out.println("4. Back");
+			System.out.println("Enter choice: ");
+			int op = sc.nextInt();
+			
+			
+			switch (op) {
+			case 1:
+				System.out.println("Enter value to insert: ");
+				int val = sc.nextInt();
+				cll.insert(val);
+				System.out.println("Inserted " + val);
+				break;
+			case 2:
+				cll.delete();
+				break;
+				
+			case 3:
+				cll.display();
+				break;
+			case 4:
+				return;
+				default:
+					System.out.println("Invalid choice.");
+					
+					
+				}	
+			}
+		 }
+	}
+
+
